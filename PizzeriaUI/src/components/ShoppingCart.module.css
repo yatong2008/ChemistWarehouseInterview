@@ -1,0 +1,51 @@
+.cartContainer {
+    display: block;
+    margin-bottom: 50px;
+  }
+  
+  .cartDropDown {
+    background: rgb(220, 217, 249);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 140px;
+    text-align: left;
+    z-index: 999;
+    border-radius: 12px;
+  }
+  
+  .cartDropDown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cartDropDown li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+  }
+  
+  .cartDropDown li:last-child {
+    border-bottom: 0;
+  }
+  
+  .button {
+    background: none;
+    border: none;
+    padding: 20px 30px;
+    background-color: rgb(55, 153, 170);
+    border-radius:12px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 32px;
+    color: rgb(228, 249, 248);
+    font-weight: bold;
+  
+  }
+  
+  .button svg {
+    margin: 0 10px 0 0;
+  }
