@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import styles from './App.module.css';
-import { Header } from './components/header/Header';
-import { Footer } from './components/footer/Footer';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 import { HomePage } from './pages/HomePage';
 import { MenuPage } from './pages/MenuPage';
 import { useNavigate } from "react-router-dom";

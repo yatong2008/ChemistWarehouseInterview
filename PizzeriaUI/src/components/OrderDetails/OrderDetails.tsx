@@ -51,24 +51,24 @@ export const OrderDetails = () => {
             return (
               <>
                 <Card
-                    style={{ marginTop: 16 }}
-                    type="inner"
-                    title={element.pizzaName}
+                  style={{ marginTop: 16 }}
+                  type="inner"
+                  title={element.pizzaName}
                 >
-                    <Title level={5}>$ {element.price}</Title>
-                    <Title level={5}>Toppings:</Title>
-                    <ul>
+                  <Title level={5}>$ {element.price}</Title>
+                  <Title level={5}>Toppings:</Title>
+                  <ul>
                     {element.toppings?.map((t) => {
-                        return (
+                      return (
                         <li>
-                            {t.name} ${t.price}
+                          {t.name} ${t.price}
                         </li>
-                        );
+                      );
                     })}
-                    </ul>
-                    <Button onClick={() => removeHandler(element.orderId)}>
-                        Delete
-                    </Button>    
+                  </ul>
+                  <Button onClick={() => removeHandler(element.orderId)}>
+                    Delete
+                  </Button>
                 </Card>
               </>
             );

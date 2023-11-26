@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "antd";
-import { Card, Space, Row, Col, Button } from "antd";
-import { hover } from "@testing-library/user-event/dist/hover";
+import { Card, Row, Col } from "antd";
 import styles from "./HomePage.module.css";
 
 const { Title } = Typography;
