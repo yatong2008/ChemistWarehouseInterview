@@ -4,7 +4,7 @@ namespace PizzeriaDAL.RepositoryInterfaces
 {
 	public interface IToppingRepository
 	{
-		Task<List<Topping>> GetAll();
+		Task<IEnumerable<Topping>> GetAll();
         public Topping Get(int id);
 	}
 }

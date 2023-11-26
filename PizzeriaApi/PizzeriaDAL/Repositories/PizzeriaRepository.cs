@@ -10,12 +10,14 @@ namespace PizzeriaDAL.Repositories
             new Pizzeria
             {
                 Id = 1,
-                Name = "Preston"
+                Name = "Preston",
+                ImageUrl = "https://images.pexels.com/photos/2928068/pexels-photo-2928068.jpeg"
             },
             new Pizzeria
             {
                 Id = 2,
-                Name = "Southbank"
+                Name = "Southbank",
+                ImageUrl = "https://images.pexels.com/photos/17734945/pexels-photo-17734945/free-photo-of-buenos-aires-street-at-night.jpeg"
             }
         };
 

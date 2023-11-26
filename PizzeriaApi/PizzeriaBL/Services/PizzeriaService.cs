@@ -16,10 +16,11 @@ namespace PizzeriaBL.Services
         {
             var pizzeriaDtos = await _pizzeriaRepository.GetAll();
 
-            var results = pizzeriaDtos.Select(r => new PizzeriaDto
+            var results = pizzeriaDtos.Select(pizzeria => new PizzeriaDto
             {
-                Id = r.Id,
-                Name = r.Name
+                Id = pizzeria.Id,
+                Name = pizzeria.Name,
+                ImageUrl = pizzeria.ImageUrl
             });
 
             return results;
@@ -31,7 +32,8 @@ namespace PizzeriaBL.Services
             return new PizzeriaDto
             {
                 Id = pizzeria.Id,
-                Name = pizzeria.Name
+                Name = pizzeria.Name,
+                ImageUrl = pizzeria.ImageUrl
             };
         }
     }

@@ -5,7 +5,7 @@ namespace PizzeriaDAL.Repositories
 {
     public class PizzaRepository : IPizzaRepository
     {
-        private readonly List<Pizza> _pizzas = new List<Pizza>
+        private readonly IEnumerable<Pizza> _pizzas = new List<Pizza>
         {
             new Pizza {
                 Id = 1,
@@ -32,7 +32,7 @@ namespace PizzeriaDAL.Repositories
             }
         };
 
-        public Task<List<Pizza>> GetAll()
+        public Task<IEnumerable<Pizza>> GetAll()
         {
             return Task.FromResult(_pizzas);
         }
@@ -40,17 +40,6 @@ namespace PizzeriaDAL.Repositories
         public Pizza Get(int id)
         {
             return _pizzas.Single(p => p.Id == id);
-        }
-
-        public void Add(Pizza pizza)
-        {
-            pizza.Id = _pizzas.Max(p => p.Id) + 1;
-            _pizzas.Add(pizza);
-        }
-
-        public void Remove(int id)
-        {
-            _pizzas.RemoveAll(p => p.Id == id);
         }
     }
 }

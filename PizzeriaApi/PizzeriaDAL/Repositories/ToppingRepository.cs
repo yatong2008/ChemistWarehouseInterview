@@ -5,7 +5,7 @@ namespace PizzeriaDAL.Repositories
 {
     public class ToppingRepository : IToppingRepository
     {
-        private readonly List<Topping> _toppings = new List<Topping>
+        private readonly IEnumerable<Topping> _toppings = new List<Topping>
         {
             new Topping
             {
@@ -75,7 +75,7 @@ namespace PizzeriaDAL.Repositories
             }
         };
 
-        public Task<List<Topping>> GetAll()
+        public Task<IEnumerable<Topping>> GetAll()
         {
             return Task.FromResult(_toppings);
         }

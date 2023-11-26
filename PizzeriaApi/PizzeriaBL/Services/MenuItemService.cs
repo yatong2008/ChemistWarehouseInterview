@@ -30,16 +30,16 @@ namespace PizzeriaBL.Services
                 PizzaId = x.PizzaId,
                 PizzeriaId = x.PizzeriaId,
                 Price = x.Price,
-                PizzaName = pizzas.Single(p => p.Id == x.PizzaId).Name, //todo: Better way is retrieving from EF ORM/Include(Linq)
-                Toppings = pizzas.Single(p => p.Id == x.PizzaId).ToppingIds.Select(id => new ToppingDto()
+                PizzaName = pizzas.FirstOrDefault(p => p.Id == x.PizzaId).Name, //todo: Better way is retrieving from EF ORM/Include(Linq)
+                Toppings = pizzas.FirstOrDefault(p => p.Id == x.PizzaId).ToppingIds.Select(id => new ToppingDto()
                 {
                     Id = id,
-                    Name = toppings.Single(t => t.Id == id).Name,
-                    Price = toppings.Single(t => t.Id == id).Price
+                    Name = toppings.FirstOrDefault(t => t.Id == id).Name,
+                    Price = toppings.FirstOrDefault(t => t.Id == id).Price
                 }).ToList()
             });
 
-            return results;
+            return results.ToList();
         }
     }
 }

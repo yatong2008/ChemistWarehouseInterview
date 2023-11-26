@@ -19,6 +19,17 @@ builder.Services.AddTransient<IPizzeriaRepository, PizzeriaRepository>();
 builder.Services.AddTransient<IPizzaRepository, PizzaRepository>();
 builder.Services.AddTransient<IToppingRepository, ToppingRepository>();
 
+// Cors setup
+var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins , policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:3000");
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,6 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(myAllowSpecificOrigins );
 
 app.UseHttpsRedirection();
 
